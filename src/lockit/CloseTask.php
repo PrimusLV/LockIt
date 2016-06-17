@@ -22,7 +22,8 @@ class CloseTask extends PluginTask {
     }
 
     public function onRun($tick) {
-
+    
+        if($this->block->getLevel()->getBlockIdAt($this->block->x, $this->block->y, $this->block->z) !== Block::IRON_DOOR_BLOCK) return;
         //$this->block->getLevel()->setBlock($this->block, Block::get(Item::IRON_DOOR_BLOCK));
         $newdoor = Block::get(Item::IRON_DOOR_BLOCK);
         
